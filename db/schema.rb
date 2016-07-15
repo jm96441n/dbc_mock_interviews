@@ -17,16 +17,16 @@ ActiveRecord::Schema.define(version: 20160715134743) do
   enable_extension "plpgsql"
 
   create_table "interviews", force: :cascade do |t|
-    t.integer "user_1",     null: false
-    t.integer "user_2",     null: false
+    t.integer "user_1_id",  null: false
+    t.integer "user_2_id",  null: false
     t.date    "date",       null: false
     t.string  "question_1", null: false
     t.string  "question_2", null: false
   end
 
   add_index "interviews", ["date"], name: "index_interviews_on_date", using: :btree
-  add_index "interviews", ["user_1"], name: "index_interviews_on_user_1", using: :btree
-  add_index "interviews", ["user_2"], name: "index_interviews_on_user_2", using: :btree
+  add_index "interviews", ["user_1_id"], name: "index_interviews_on_user_1_id", using: :btree
+  add_index "interviews", ["user_2_id"], name: "index_interviews_on_user_2_id", using: :btree
 
   create_table "registrations", force: :cascade do |t|
     t.date    "date",    null: false

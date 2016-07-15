@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160715134743) do
   add_index "interviews", ["user_1_id"], name: "index_interviews_on_user_1_id", using: :btree
   add_index "interviews", ["user_2_id"], name: "index_interviews_on_user_2_id", using: :btree
 
-  create_table "registrations", force: :cascade do |t|
+  create_table "upcomings", force: :cascade do |t|
     t.date    "date",    null: false
     t.integer "user_id", null: false
   end

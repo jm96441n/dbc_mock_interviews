@@ -1,5 +1,5 @@
 FactoryGirl.define do
-	factory :registration do
+	factory :upcoming do
 		association :user, factory: :user
 		date Date.tomorrow
 	end

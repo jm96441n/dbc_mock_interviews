@@ -10,8 +10,8 @@ RSpec.describe User, type: :model do
   it 'should have a name' do
   	expect( User.first.name ).to eq('Person McPeopleFace')
   end
-  it 'should have many registrations' do
-  	registrations = @u.registrations
+  it 'should have many upcoming interviews' do
+  	registrations = @u.upcomings
   	expect( registrations ).to be_kind_of(ActiveRecord::Associations::CollectionProxy)
   end
   it 'should have many interviews' do

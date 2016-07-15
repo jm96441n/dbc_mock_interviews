@@ -1,6 +1,6 @@
-class Registrations < ActiveRecord::Migration
+class Upcomings < ActiveRecord::Migration
   def change
-  	create_table :registrations do |t|
+  	create_table :upcomings do |t|
   		t.date :date, null: false
   		t.references :user, null: false
   	end

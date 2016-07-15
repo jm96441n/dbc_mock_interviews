@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe RegistrationsController, type: :controller do
+RSpec.describe UpcomingsController, type: :controller do
 	describe 'anonymous user' do
 		before :each do
 			login_with nil
@@ -15,7 +15,7 @@ RSpec.describe RegistrationsController, type: :controller do
 			@u = create( :user )
 			login_with @u
 		end
-		it 'New: should show a logged in user the form to make new registrations' do
+		it 'New: should show a logged in user the form to make new upcoming interviews' do
 			get :new
 			expect( response ).to render_template( :new )
 		end

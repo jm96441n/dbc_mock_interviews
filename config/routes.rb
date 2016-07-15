@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'users#show'
   get 'users/:id' => 'users#show'
-  resources :registrations, only: [:new,:create]
+  resources :upcomings, only: [:new,:create]
 
 end

@@ -1,3 +1,9 @@
 <h1> Hello <%= current_user.name %></h1>
 
 <%= link_to 'Register for Upcoming Interview Sessions', new_upcoming_path %>
+
+<p>Registered Interview Dates</p>
+
+<% @user.upcomings.each do |upcoming| %>
+	<p><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></p>
+<% end %>

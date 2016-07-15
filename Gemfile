@@ -37,7 +37,7 @@ gem 'httparty'
 gem 'therubyracer'
 gem 'devise'
 
-
+gem 'whenever'
 
 
 group :development, :test do

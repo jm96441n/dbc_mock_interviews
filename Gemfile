@@ -33,7 +33,7 @@ gem 'sprockets-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'httparty'
 gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'

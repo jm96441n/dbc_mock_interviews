@@ -20,7 +20,5 @@ class InterviewsController < ApplicationController
 		end
 
 	end
-
-
 end
 

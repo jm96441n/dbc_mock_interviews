@@ -7,3 +7,7 @@
 <% @user.upcomings.each do |upcoming| %>
 	<p><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></p>
 <% end %>
+
+<% @user.interviews.each do |interview| %>
+	<%= link_to "#{interview.date}", interview_path(interview) %>
+<% end %>

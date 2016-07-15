@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   has_many :interviews, class_name: "Interview", foreign_key: "user_1_id"
   has_many :interviews, class_name: "Interview", foreign_key: "user_2_id"
   has_many :registrations
+
+  validates :name, :email, presence: true
+
 end

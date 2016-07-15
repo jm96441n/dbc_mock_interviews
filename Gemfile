@@ -50,7 +50,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
   gem 'vcr'
-  gem 'shoulda-matchers'
 end
 
 group :test do

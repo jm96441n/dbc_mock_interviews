@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
   	@u = create( :user )
   end
   it 'should have an email' do
-  	expect( User.last.email ).to match(/^person\d@example.com/)
+  	expect( User.last.email ).to match(/^person\d+@example.com/)
   end
   it 'should have a name' do
   	expect( User.first.name ).to eq('Person McPeopleFace')

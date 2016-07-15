@@ -5,9 +5,9 @@
 <p>Registered Interview Dates</p>
 
 <% @user.upcomings.each do |upcoming| %>
-	<p><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></p>
+	<li><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></li>
 <% end %>
 
-<% @user.interviews.each do |interview| %>
-	<%= link_to "#{interview.date}", interview_path(interview.id) %>
+<% @user.interviews.reverse.each do |interview| %>
+	<li><%= link_to "#{interview.date}", interview_path(interview.id) %></li>
 <% end %>

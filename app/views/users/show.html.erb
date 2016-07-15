@@ -9,5 +9,5 @@
 <% end %>
 
 <% @user.interviews.each do |interview| %>
-	<%= link_to "#{interview.date}", interview_path(interview) %>
+	<%= link_to "#{interview.date}", interview_path(interview.id) %>
 <% end %>

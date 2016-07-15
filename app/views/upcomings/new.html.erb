@@ -2,6 +2,25 @@
 
 <h3>Dates are only valid on Tuesday and Thursday</h3>
 
-<form>
-	<input type='checkbox' name="<%= Date.current.next_week(:tuesday) %>" value=<%= Date.current.next_week(:tuesday) %>/>
+<form action="/upcomings" method="POST">
+	<input type="hidden" name="authenticity_token" value="d+9wv7RwRnMflcGeegV1IkLMxiutFy6twk0ysG6WPq69irNDh47z6DWCP2Q2tXwf1DgYI6frirYwKYFsY91WEQ==">
+	<div>
+		<span>Tuesday  <%= Date.current.next_week(:tuesday).month %>/<%= Date.current.next_week(:tuesday).day %> </span>
+		<input type="checkbox" name="upcoming[1_tuesday]" value="<%= Date.current.next_week(:tuesday) %>" />
+	</div>
+	<div>
+		<span>Thursday  <%= Date.current.next_week(:thursday).month %>/<%= Date.current.next_week(:thursday).day %> </span>
+		<input type="checkbox" name="upcoming[1_thursday]" value="<%= Date.current.	next_week(:thursday) %>" />
+	</div>
+
+	<div>
+		<span>Tuesday  <%= Date.current.next_week.next_week(:tuesday).month %>/<%= Date.current.next_week.next_week(:tuesday).day %> </span>
+		<input type="checkbox" name="upcoming[2_tuesday]" value="<%= Date.current.next_week.next_week(:tuesday) %>" />
+	</div>
+	<div>
+		<span>Thursday  <%= Date.current.next_week.next_week(:thursday).month %>/<%= Date.current.next_week.next_week(:thursday).day %> </span>
+		<input type="checkbox" name="upcoming[2_thursday]" value="<%= Date.current.	next_week.next_week(:thursday) %>" />
+	</div>
+
+	<input type="submit" value="Schedule Those Interviews!"/>
 </form>

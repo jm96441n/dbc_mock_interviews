@@ -36,8 +36,7 @@ gem 'sprockets-rails'
 gem 'httparty'
 gem 'therubyracer'
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
+
 
 
 

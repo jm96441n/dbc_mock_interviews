@@ -1,0 +1,16 @@
+<h1>Interview on <%= @interview.date %></h1>
+
+<p><%= @partner_1.name %></p>
+<p><%= @partner_1.email %></p>
+
+<% if @partner_2 %>
+	<p><%= @partner_2.name %></p>
+	<p><%= @partner_2.email %></p>
+	<p>You are in a group of three this week, you will each have 20 minutes to answer each question as opposed to the normal 30, or you can go for longer, discuss with your partners to determine your time constraints. In this listed below is the way questions will be asked. A double arrow indicates you are asking the person on the other side of the arrow.</p>
+
+	<p><%= @p_1.name %> >> <%= @p_2.name %> >> <%= @p_3.name %> >> <%= @p_1.name %></p>
+
+<% end %>
+
+<p>This is the question you will be asking your partner: </p> 
+<p><%= @question %></p>

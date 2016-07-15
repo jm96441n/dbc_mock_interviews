@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715134743) do
+ActiveRecord::Schema.define(version: 20160715185512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160715134743) do
     t.date    "date",       null: false
     t.string  "question_1", null: false
     t.string  "question_2", null: false
+    t.integer "user_3_id"
+    t.string  "question_3"
   end
 
   add_index "interviews", ["date"], name: "index_interviews_on_date", using: :btree

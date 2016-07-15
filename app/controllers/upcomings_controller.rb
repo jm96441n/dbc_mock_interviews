@@ -2,6 +2,10 @@ class UpcomingsController < ApplicationController
 
 	def new
 		@upcoming = Upcoming.new
+		@next_tuesday = @upcoming.next_day('Tuesday')
+		@next_thursday = @upcoming.next_day('Thursday')
+		@following_tuesday = @upcoming.following_tuesday
+		@following_thursday = @upcoming.following_thursday
 	end
 
 	def create

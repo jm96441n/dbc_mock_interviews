@@ -5,14 +5,14 @@
 <form action="/upcomings" method="POST">
 	<input type="hidden" name="authenticity_token" value="d+9wv7RwRnMflcGeegV1IkLMxiutFy6twk0ysG6WPq69irNDh47z6DWCP2Q2tXwf1DgYI6frirYwKYFsY91WEQ==">
 	
-	<% if Date.tomorrow != Date.current.next_week(:tuesday).month || 2.days.from_now != Date.current.next_week(:tuesday).month %>
+	<% if Date.tomorrow != @next_tuesday || 2.days.from_now != @next_tuesday %>
 		<div>
 			<span>Tuesday  <%= Date.current.next_week(:tuesday).month %>/<%= Date.current.next_week(:tuesday).day %> </span>
 			<input type="checkbox" name="upcoming[1_tuesday]" value="<%= Date.current.next_week(:tuesday) %>" />
 		</div>
 	<% end %>
 
-	<% if Date.tomorrow != Date.current.next_week(:thursday) || 2.days.from_now != Date.current.next_week(:thursday) %>
+	<% if Date.tomorrow != @next_thursday || 2.days.from_now != @next_thursday %>
 		<div>
 		<span>Thursday  <%= Date.current.next_week(:thursday).month %>/<%= Date.current.next_week(:thursday).day %> </span>
 		<input type="checkbox" name="upcoming[1_thursday]" value="<%= Date.current.	next_week(:thursday) %>" />

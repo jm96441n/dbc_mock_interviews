@@ -8,6 +8,19 @@ class Upcoming < ActiveRecord::Base
 		date.tuesday? || date.thursday?
 	end
 
+	def next_day(day)
+		date  = Date.parse(day)
+	  days_between = date > Date.today ? 0 : 7
+	  date + days_between
+	end
+
+	def following_tuesday
+		next_day('Tuesday') + 7
+	end
+
+	def following_thursday
+		next_day('Thursday') + 7
+	end
 
 end
 

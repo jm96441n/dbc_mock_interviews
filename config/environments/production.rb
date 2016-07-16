@@ -69,7 +69,7 @@ Rails.application.configure do
       :authentication => :plain,
       :user_name      => ENV['SENDGRID_USERNAME'],
       :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => ENV['SENDGRID_DOMAIN']
+      :domain         => 'http://dbc-algorithms.herokuapp.com'
     }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

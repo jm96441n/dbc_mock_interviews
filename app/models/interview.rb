@@ -43,6 +43,10 @@ class Interview < ActiveRecord::Base
 							interview: i.id
 							)
 					end
+					UserMailer.interview_email(user_1,question_1).deliver_now
+					UserMailer.interview_email(user_2,question_2).deliver_now
+					UserMailer.interview_email(user_3,question_3).deliver_now
+
 					users = []
 				else
 					user_1 = users.sample
@@ -65,6 +69,8 @@ class Interview < ActiveRecord::Base
 						user_id: user_2,
 						interview: i.id
 						)
+					UserMailer.interview_email(user_1,question_1).deliver_now
+					UserMailer.interview_email(user_2,question_2).deliver_now
 				end
 			end
 		end

@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 		@user = User.includes(:upcomings,:interviews).find(current_user.id)
 	end
 
-	def create!
-		welcome_message
+	def create
 		super
+		welcome_message
 	end
 
 	private

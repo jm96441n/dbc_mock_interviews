@@ -30,6 +30,7 @@ class Interview < ActiveRecord::Base
 						headers: {"Authorization": ENV['CODEWARS_KEY']},
 						data: {"strategy": "random"}
 						)
+					question_3 = question_3['description']
 					i = Interview.new( 
 						question_1: 'question_1',
 						question_2: 'question_2',
@@ -43,9 +44,9 @@ class Interview < ActiveRecord::Base
 							interview: i.id
 							)
 					end
-					UserMailer.interview_email(user_1,question_1).deliver_now
-					UserMailer.interview_email(user_2,question_2).deliver_now
-					UserMailer.interview_email(user_3,question_3).deliver_now
+					UserMailer.interview_3_email(user_1, user_2, user_3, question_1).deliver_now
+					UserMailer.interview_3_email(user_2, user_3, user_1, question_2).deliver_now
+					UserMailer.interview_3_email(user_3, user_1, user_2, question_3).deliver_now
 
 					users = []
 				else
@@ -69,8 +70,8 @@ class Interview < ActiveRecord::Base
 						user_id: user_2,
 						interview: i.id
 						)
-					UserMailer.interview_email(user_1,question_1).deliver_now
-					UserMailer.interview_email(user_2,question_2).deliver_now
+					UserMailer.interview_email(user_1, user_2, question_1).deliver_now
+					UserMailer.interview_email(user_2, user_1, question_2).deliver_now
 				end
 			end
 		end

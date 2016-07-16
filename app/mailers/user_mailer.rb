@@ -8,12 +8,22 @@ class UserMailer < ApplicationMailer
 		mail(to: @user.email,subject: 'Welcome to DBC Algorithms')
 	end
 
-	def interview_email(user1,question)
+	def interview_email(user, partner, question)
 		@user = User.find(user)
+		@partner = partner
 		@question = question
 		@url = 'https://dbc-algorithms.herokuapp.com/' + @user.id
 		mail(to: @user.email,subject: 'Your Upcoming Mock Interview')
 	end	
+
+	def interview_3_email(user, partner1, partner2, question)
+		@user = User.find(user)
+		@partner1 = partner1
+		@partner2 = partner2
+		@question = question
+		@url = 'https://dbc-algorithms.herokuapp.com/' + @user.id
+		mail(to: @user.email,subject: 'Your Upcoming Mock Interview')
+	end
 
 	def test_email(user)
 		@user = user

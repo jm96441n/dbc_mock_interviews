@@ -66,8 +66,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'dbc-algorithms.herokuapp.com' }
   config.action_mailer.default_method = :smtp
 
-  config.action_mailer.smtp_settings {
-    :address => 'smtp.sendgrid.net',
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net',
     port: '587',
     authentication: :plain,
     user_name: ENV['SENDGRID_USERNAME'],

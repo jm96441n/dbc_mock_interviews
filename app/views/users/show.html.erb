@@ -5,7 +5,9 @@
 <p>Registered Interview Dates</p>
 
 <% @user.upcomings.each do |upcoming| %>
-	<li><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></li>
+	<% if upcoming.allowed_to_delete? %>
+		<li><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></li>
+		<% end %>
 <% end %>
 
 <% @user.interviews.reverse.each do |interview| %>

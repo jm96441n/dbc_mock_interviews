@@ -16,6 +16,11 @@ class UpcomingsController < ApplicationController
 		redirect_to action: "show", controller: "users", id: current_user.id
 	end
 
+	def destroy
+		Upcoming.destroy(params[:id])
+		redirect_to root_path
+	end
+
 
 	private
 

@@ -1,8 +1,8 @@
 namespace :interview do
   desc "TODO"
   task Make: :environment do
-  	if Date.today.strftime("%A") == "Saturday" || Date.today.strftime("%A") == "Tuesday"
-			@upcomings = Upcoming.where("date = ?", Date.today + 3)
+  	if Date.today.strftime("%A") == "Sunday" || Date.today.strftime("%A") == "Tuesday"
+			@upcomings = Upcoming.where("date = ?", Date.today + 2)
 			users = []
 			@upcomings.each do |up|
 				users << up.user_id

@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
 		@user = User.find(user)
 		@partner = partner
 		@question = question
-		@url = 'https://dbc-algorithms.herokuapp.com/' + @user.id
+		@url = "https://dbc-algorithms.herokuapp.com/#{@user.id}"
 		mail(to: @user.email,subject: 'Your Upcoming Mock Interview')
 	end	
 

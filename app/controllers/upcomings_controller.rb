@@ -1,5 +1,5 @@
 class UpcomingsController < ApplicationController
-	
+
 	def new
 		@upcoming = Upcoming.new
 		@next_tuesday = @upcoming.next_day('Tuesday')

@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+body{
+  background-color:#a5deff;
+}
+
+#container{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
+
+}
+#content{
+  background-color:white;
+  border-radius:20px;
+  width:200px;
+align-content:center;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  padding:0 25%;
+
+}
+
+.new_user{
+  padding:50px;
+justify-content:space-around;
+  display:flex;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  flex-grow:2;
+}
+.new_user input{
+  width:100px;
+  flex: 1 0 8em;
+
+}

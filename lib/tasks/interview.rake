@@ -10,21 +10,21 @@ namespace :interview do
 			until users.length == 0
 				question_1 = HTTParty.post(
 						'https://www.codewars.com/api/v1/code-challenges/ruby/train',
-						headers: {"Authorization": ENV['CODEWARS_KEY']},
-						data: {"strategy": "random"}
+						headers: {"Authorization" = ENV['CODEWARS_KEY']},
+						data: {"strategy" = "random"}
 						)
 				question_2 = HTTParty.post(
 						'https://www.codewars.com/api/v1/code-challenges/ruby/train',
-						headers: {"Authorization": ENV['CODEWARS_KEY']},
-						data: {"strategy": "random"}
+						headers: {"Authorization" = ENV['CODEWARS_KEY']},
+						data: {"strategy" = "random"}
 						)
 				question_1 = question_1["description"]
 				question_2 = question_2["description"]	
 				if users.length == 3
 					question_3 = HTTParty.post(
 						'https://www.codewars.com/api/v1/code-challenges/ruby/train',
-						headers: {"Authorization": ENV['CODEWARS_KEY']},
-						data: {"strategy": "random"}
+						headers: {"Authorization" = ENV['CODEWARS_KEY']},
+						data: {"strategy" = "random"}
 						)
 					question_3 = question_3['description']
 					i = Interview.new( 

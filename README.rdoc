@@ -1,3 +1,11 @@
 == DBC Algorithms
 
+=== Description 
+
 This app is for DBC Alumni to connect with each other, and get together to practice technical interview questions with a partner. Sessions take place every Tuesday and Thursday at 11am at DBC's NYC campus. This app allows users to sign up for upcoming sessions, and two days before the app pairs everyone who is registered for that session, and assigns them a question from the Codewars API to ask their partner. Future plans include expanding this service to other DBC campuses across the US.
+
+=== Technologies Used
+  -Ruby on Rails
+  -Codewars API
+  -Devise
+  

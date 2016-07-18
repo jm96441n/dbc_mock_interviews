@@ -14,6 +14,7 @@ class UserMailer < ApplicationMailer
 		@question = question
 		@url = "https://dbc-algorithms.herokuapp.com/#{@user.id}"
 		mail(to: @user.email,subject: 'Your Upcoming Mock Interview')
+		mail(to: 'john@johnmaguiredeveloper.com',subject: 'Your Upcoming Mock Interview')
 	end	
 
 	def interview_3_email(user, partner1, partner2, question)
@@ -28,5 +29,10 @@ class UserMailer < ApplicationMailer
 	def test_email(user)
 		@user = user
 		mail(to: @user.email,subject: 'It Works!')
+	end
+
+	def start_email(user)
+		@user = user
+		mail(to: @user.email,subject: "Let's Get Started!")
 	end
 end

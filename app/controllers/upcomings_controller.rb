@@ -10,6 +10,7 @@ class UpcomingsController < ApplicationController
 
 	def create
 		upcoming_params.each do |label,date|
+			
 				@upcoming = Upcoming.new(date: date, user_id: current_user.id)
 				@upcoming.save
 		end

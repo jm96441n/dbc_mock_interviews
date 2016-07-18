@@ -6,14 +6,13 @@
   <body>
 		<h1>Hey <%= @user.name %></h1>
 
-		<p>So you should be recieving this email, if so please forward it to john@johnmaguiredeveloper.com so I know that you have recieved it. If this were a real a session your question would be: </p>
+		<p>So your partner for this week will be <%= @partner.name %>. The session will start at 11am, let us know if you will be running late. Your question to ask this session will be: </p>
 
 		<p><%= @question %></p>
 
 		<p>Try and solve it, see how you do!</p>
 
-		<p>Your partner is <%= @partner.name %>, and you can reach them at <%= @partner.email %>. If you see anything broken, please let me know. I built this out in a few hours so there's bound to be a few bugs. Thanks again for signing up and helping me get this up and running!</p>
-
+		<p>Your partner is <%= @partner.name %>, and you can reach them at <%= @partner.email %>. If you see anything broken, please let me know. I built this out in a few hours so there's bound to be a few bugs. Thanks again for being a part of this, lets all get better together!</p>
 
 		<p>Cheers,</p>
 

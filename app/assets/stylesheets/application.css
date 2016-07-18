@@ -15,6 +15,8 @@
  */
 body{
   background-color:#a5deff;
+  font-family: 'Varela Round', sans-serif;
+  color: #333;
 }
 #header{
   display:flex;
@@ -87,7 +89,7 @@ justify-content:space-around;
   display:inline-block;
   background-color:white;
   border-radius: 0px 0px 20px 20px;
-  width:280px;
+  width:350px;
   align-content:center;
   display:flex;
   flex-direction:column;

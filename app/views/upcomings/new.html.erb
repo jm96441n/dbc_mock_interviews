@@ -9,26 +9,27 @@
 	<input type="hidden" name="authenticity_token" value="d+9wv7RwRnMflcGeegV1IkLMxiutFy6twk0ysG6WPq69irNDh47z6DWCP2Q2tXwf1DgYI6frirYwKYFsY91WEQ==">
 <div class="dates">
 	<% if Date.tomorrow != @next_tuesday || 2.days.from_now != @next_tuesday %>
+
 		<div>
-			<span>Tuesday  <%= Date.current.next_week(:tuesday).month %>/<%= Date.current.next_week(:tuesday).day %> </span>
-			<input type="checkbox" name="upcoming[1_tuesday]" value="<%= Date.current.next_week(:tuesday) %>" />
+			<span>Tuesday  <%= @next_tuesday.month %>/<%= @next_tuesday.day %> </span>
+			<input type="checkbox" name="upcoming[1_tuesday]" value="<%= @next_tuesday %>" />
 		</div>
 	<% end %>
 
-	<% if Date.tomorrow != @next_thursday || 2.days.from_now != @next_thursday %>
+	<% if Date.tomorrow != @next_thursday || 2.days.from_now.to_date != @next_thursday %>
 		<div>
-		<span>Thursday  <%= Date.current.next_week(:thursday).month %>/<%= Date.current.next_week(:thursday).day %> </span>
-		<input type="checkbox" name="upcoming[1_thursday]" value="<%= Date.current.	next_week(:thursday) %>" />
+		<span>Thursday  <%= @next_thursday.month %>/<%= @next_thursday.day %> </span>
+		<input type="checkbox" name="upcoming[1_thursday]" value="<%= @next_thursday %>" />
 	</div>
 	<% end %>
 
 	<div>
-		<span>Tuesday  <%= Date.current.next_week.next_week(:tuesday).month %>/<%= Date.current.next_week.next_week(:tuesday).day %> </span>
-		<input type="checkbox" name="upcoming[2_tuesday]" value="<%= Date.current.next_week.next_week(:tuesday) %>" />
+		<span>Tuesday  <%= @following_tuesday.month %>/<%= @following_tuesday.day %> </span>
+		<input type="checkbox" name="upcoming[2_tuesday]" value="<%= @following_tuesday %>" />
 	</div>
 	<div>
-		<span>Thursday  <%= Date.current.next_week.next_week(:thursday).month %>/<%= Date.current.next_week.next_week(:thursday).day %> </span>
-		<input type="checkbox" name="upcoming[2_thursday]" value="<%= Date.current.	next_week.next_week(:thursday) %>" />
+		<span>Thursday  <%= @following_thursday.month %>/<%= @following_thursday.day %> </span>
+		<input type="checkbox" name="upcoming[2_thursday]" value="<%= @following_thursday %>" />
 	</div>
 </div>
 <div class="actions">

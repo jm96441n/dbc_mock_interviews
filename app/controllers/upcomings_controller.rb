@@ -4,16 +4,22 @@ class UpcomingsController < ApplicationController
 		@upcoming = Upcoming.new
 		@next_tuesday = @upcoming.next_day('Tuesday')
 		@next_thursday = @upcoming.next_day('Thursday')
-		@following_tuesday = @upcoming.following_tuesday
-		@following_thursday = @upcoming.following_thursday
+		@following_tuesday = @upcoming.following_day('Tuesday')
+		@following_thursday = @upcoming.following_day('Thursday')
 	end
 
 	def create
 		upcoming_params.each do |label,date|
-			@upcoming = Upcoming.new(date: date, user_id: current_user.id)
-			@upcoming.save
+			
+				@upcoming = Upcoming.new(date: date, user_id: current_user.id)
+				@upcoming.save
 		end
 		redirect_to action: "show", controller: "users", id: current_user.id
+	end
+
+	def destroy
+		Upcoming.destroy(params[:id])
+		redirect_to root_path
 	end
 
 

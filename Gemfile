@@ -36,7 +36,7 @@ gem 'sprockets-rails'
 gem 'httparty'
 gem 'therubyracer'
 gem 'devise'
-
+gem 'rails_12factor'
 
 
 group :development, :test do

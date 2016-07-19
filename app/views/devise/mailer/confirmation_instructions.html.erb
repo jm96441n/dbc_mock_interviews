@@ -1,5 +1,11 @@
-<p>Welcome <%= @email %>!</p>
+<h1>Welcome to DBC Algorithms!, <%= @user.name %></h1>
+    <p>
+      You have successfully signed up to DBC Algorithms,
+      your username is your email.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %> to confirm your email.
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+      Two days before each session that you have signed up for you will receive an email with your partner(s) and the question you will be asking them. You have until the session to solve it (if you can't, look it up and really try to understand how the problem works, it's a great learning experience.) If you feel the question is too difficult for a junior to mid level position, shoot me an email (john@johnmaguiredeveloper.com) and I'll set you up with a new one. Have fun, and let's all get better together!
+    </p>
+    <p>Thanks for joining and have a great day!</p>

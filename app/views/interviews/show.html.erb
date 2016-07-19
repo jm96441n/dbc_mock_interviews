@@ -1,0 +1,19 @@
+<h1>Interview Scheduled for <%= @interview.date %></h1>
+
+<p>The group for this interview will be: </p>
+<ul>
+	<% @users.each do |user| %>
+		<li><br />
+			<%= user.name %>
+			<%= user.email %>
+		</li>
+	<% end %>
+</ul>
+
+<p>The question you will be asking is: </p>
+<%= @user_questions[current_user] %>
+
+
+<% if @users.length == 3 %>
+	<p>You will ask the person beneath your name this question, if you are the last person on the list, you will ask the first person.</p>
+<% end %>

@@ -13,3 +13,111 @@
  *= require_tree .
  *= require_self
  */
+body{
+  background-color:#a5deff;
+  font-family: 'Varela Round', sans-serif;
+  color: #333;
+}
+#header{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+   justify-content:space-around;
+}
+
+#container{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
+  background-color:white;
+  border-radius:20px;
+   padding:0 25%;
+   width:300px;
+   margin:0 auto;
+
+}
+#content{
+  width:200px;
+  align-content:center;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+}
+
+.new_user{
+  text-align:center;
+  font-size:1.5em;
+  padding:50px 0px;
+justify-content:space-around;
+  display:flex;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  flex-grow:2;
+}
+
+.new_user input{
+    margin-bottom:15px;
+    margin-top:20px;
+  font-size:2em;
+  flex: 1 0 8em;
+
+}
+
+.actions input{
+  border-radius:10px;
+  background-color: #f9573e;
+  transition: background-color 0.5s ease;
+  color:#fff;
+  font-size:1.5em;
+  padding:.3em .6em;
+  box-shadow: none;
+  border:none;
+}
+.actions input:hover{
+  background-color: #ff7560;
+  cursor:pointer;
+
+}
+
+.remember{
+  width:300px;
+  font-size:.8em;
+  text-align:left;
+}
+.links{
+  display:inline-block;
+  background-color:white;
+  border-radius: 0px 0px 20px 20px;
+  width:350px;
+  align-content:center;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+
+  justify-content:space-around;
+
+}
+.links ul{
+    align-items:center;
+  text-align:center;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  padding-left:0;
+  list-style:none;
+}
+.links li{
+margin-right:2%;
+}
+.links a{
+  font-size:1.2em;
+  text-decoration:none;
+  transition: color 0.5s ease;
+    color: #049ad1;
+}
+
+.links a:hover{
+  color: #5bb3f7;
+}

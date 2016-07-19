@@ -1,26 +1,36 @@
 <h1> Hello <%= current_user.name %></h1>
 
+
 <div id="containerinfo">
 
 <p><%= link_to "Sign Out", destroy_user_session_path(current_user.id), method: :delete %></p>
 
-<%= link_to 'Register for Upcoming Interview Sessions', new_upcoming_path %>
+
+<p>Registered Interview Dates</p>
 
 
 
 <p id="userdates">Registered Interview Dates</p>
-<% if @user.upcomings.empty? %>
-<p><i>snap! you have no upcoming interviews</i></p>
-<%else%>
-<% @user.upcomings.each do |upcoming| %>
-	<p><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></p>
+	<% if @user.upcomings.empty? %>
+		<p><i>snap! you have no upcoming interviews</i></p>
+	<%else%>
+		<% @user.upcomings.each do |upcoming| %>
+			<% if upcoming.allowed_to_delete? %>
+				<li><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %>  <%= link_to "Delete", upcoming_destroy_path(upcoming.id), method: :delete %></li>
+			<% end %>
+		<% end %>
+	<% end %>
+
+<% @user.interviews.reverse.each do |interview| %>
+	<li><%= link_to "#{interview.date}", interview_path(interview.id) %></li>
 <% end %>
-<%end%>
 
 
-<div id="reg">
-<%= link_to 'Register for Upcoming Interview Sessions', new_upcoming_path %>
+	<div id="reg">
+		<%= link_to 'Register for Upcoming Interview Sessions', new_upcoming_path %>
+	</div>
 </div>
+
 </div>
 
 	<% if upcoming.allowed_to_delete? %>
@@ -31,4 +41,5 @@
 <% @user.interviews.reverse.each do |interview| %>
 	<li><%= link_to "#{interview.date}", interview_path(interview.id) %></li>
 <% end %>
+
 

@@ -1,10 +1,13 @@
+<div id="header">
 <h1>Register For Upcoming Interview Sessions</h1>
-
+</div>
+<div id="container">
+	<div id="schedcontent">
 <h3>Every Tuesday and Thursday at 11am</h3>
 
 <form action="/upcomings" method="POST">
 	<input type="hidden" name="authenticity_token" value="d+9wv7RwRnMflcGeegV1IkLMxiutFy6twk0ysG6WPq69irNDh47z6DWCP2Q2tXwf1DgYI6frirYwKYFsY91WEQ==">
-	
+<div class="dates">
 	<% if Date.tomorrow != @next_tuesday || 2.days.from_now != @next_tuesday %>
 		<div>
 			<span>Tuesday  <%= Date.current.next_week(:tuesday).month %>/<%= Date.current.next_week(:tuesday).day %> </span>
@@ -27,6 +30,10 @@
 		<span>Thursday  <%= Date.current.next_week.next_week(:thursday).month %>/<%= Date.current.next_week.next_week(:thursday).day %> </span>
 		<input type="checkbox" name="upcoming[2_thursday]" value="<%= Date.current.	next_week.next_week(:thursday) %>" />
 	</div>
-
+</div>
+<div class="actions">
 	<input type="submit" value="Schedule Those Interviews!"/>
+</div>
 </form>
+</div>
+</div>

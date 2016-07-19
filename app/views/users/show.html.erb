@@ -1,9 +1,18 @@
 <h1> Hello <%= current_user.name %></h1>
 
-<%= link_to 'Register for Upcoming Interview Sessions', new_upcoming_path %>
+<div id="containerinfo">
 
-<p>Registered Interview Dates</p>
-
+<p id="userdates">Registered Interview Dates</p>
+<% if @user.upcomings.empty? %>
+<p><i>snap! you have no upcoming interviews</i></p>
+<%else%>
 <% @user.upcomings.each do |upcoming| %>
 	<p><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %></p>
 <% end %>
+<%end%>
+
+
+<div id="reg">
+<%= link_to 'Register for Upcoming Interview Sessions', new_upcoming_path %>
+</div>
+</div>

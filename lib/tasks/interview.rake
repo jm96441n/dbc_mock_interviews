@@ -32,9 +32,9 @@ namespace :interview do
 						)
 					question_3 = question_3['description']
 					i = Interview.new( 
-						question_1: 'question_1',
-						question_2: 'question_2',
-						question_3: 'question_3',
+						question_1: question_1,
+						question_2: question_2,
+						question_3: question_3,
 						date: Date.today + 2
 						)
 					i.save
@@ -60,8 +60,8 @@ namespace :interview do
 					users.delete(user_2)
 
 					i = Interview.new(
-						question_1: 'question_1',
-						question_2: 'question_2',
+						question_1: question_1,
+						question_2: question_2,
 						date: Date.today + 2
 						)
 					i.save

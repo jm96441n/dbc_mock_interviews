@@ -10,6 +10,7 @@
 
 <div class="dates">
 	<% if Date.tomorrow != @next_tuesday || 2.days.from_now != @next_tuesday %>
+
 		<div>
 			<span>Tuesday  <%= @next_tuesday.month %>/<%= @next_tuesday.day %> </span>
 			<input type="checkbox" name="upcoming[1_tuesday]" value="<%= @next_tuesday %>" />

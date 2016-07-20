@@ -80,7 +80,7 @@ body{
   display:inline-block;
   background-color:white;
   border-radius: 0px 0px 20px 20px;
-  width:350px;
+  width:450px;
   align-content:center;
   display:flex;
   flex-direction:column;
@@ -99,7 +99,7 @@ body{
   list-style:none;
 }
 .links li{
-margin-right:2%;
+width:100%;
 }
 .links a{
   font-size:1.2em;
@@ -124,11 +124,28 @@ margin-right:2%;
 }
 
 .new_user input{
-    margin-bottom:15px;
-    margin-top:20px;
-  font-size:2em;
+  border-style:solid;
+  margin-bottom:15px;
+  margin-top:20px;
+  font-size:.8em;
+  padding: .8em 1.5em;
+  border-radius:8px;
+  text-align:center;
   flex: 1 0 8em;
 }
+
+.new_user input[type=checkbox] { display:none; }
+.new_user input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.new_user input[type=checkbox] + label:before { content: "\f096"; }
+.new_user input[type=checkbox] + label:before { letter-spacing: 10px; }
+
+.new_user input[type=checkbox]:checked + label:before { content: "\f046"; }
+.new_user input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
+
 
 #reg{
   text-align:right;

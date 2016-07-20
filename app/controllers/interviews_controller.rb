@@ -2,7 +2,6 @@ class InterviewsController < ApplicationController
 
 	def show
 		@interview = Interview.find(params[:id])
-		binding.pry
 		@users = @interview.users
 		if @users.length == 3
 			@user_questions = {

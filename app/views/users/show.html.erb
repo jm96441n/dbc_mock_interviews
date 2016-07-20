@@ -33,13 +33,3 @@
 
 </div>
 
-	<% if upcoming.allowed_to_delete? %>
-		<li><%= upcoming.date.strftime("%A")%> <%= upcoming.date.month %>/<%= upcoming.date.day %>  <%= link_to "Delete", upcoming_destroy_path(upcoming.id), method: :delete %></li>
-		<% end %>
-<% end %>
-
-<% @user.interviews.reverse.each do |interview| %>
-	<li><%= link_to "#{interview.date}", interview_path(interview.id) %></li>
-<% end %>
-
-

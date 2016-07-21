@@ -17,7 +17,9 @@ namespace :user do
   		users << User.find(ui[0].user_id)
   		users << User.find(ui[1].user_id)
   	end
-  	p users
+  	users.each do |user|
+  		UserMailer.check_in(user).deliver_now
+  	end
   end
 
 end

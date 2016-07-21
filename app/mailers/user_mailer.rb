@@ -35,4 +35,9 @@ class UserMailer < ApplicationMailer
 		@user = user
 		mail(to: @user.email,subject: "Let's Get Started!")
 	end
+
+	def check_in(user)
+		@user = user
+		mail(to: @user.email,subject: 'Checking In')
+	end
 end

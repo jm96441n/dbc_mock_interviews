@@ -40,4 +40,9 @@ class UserMailer < ApplicationMailer
 		@user = user
 		mail(to: @user.email,subject: 'Checking In')
 	end
+
+	def confirm(user)
+		@user = user
+		mail(to: @user.email, subject 'Confirming Your Session for Tomorrow')
+	end
 end

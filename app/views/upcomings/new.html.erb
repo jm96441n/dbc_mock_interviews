@@ -12,7 +12,7 @@
 	<input type="hidden" name="authenticity_token" value="d+9wv7RwRnMflcGeegV1IkLMxiutFy6twk0ysG6WPq69irNDh47z6DWCP2Q2tXwf1DgYI6frirYwKYFsY91WEQ==">
 
 <div class="dates">
-	<% if Date.tomorrow != @next_tuesday || 2.days.from_now != @next_tuesday %>
+	<% if Date.tomorrow != @next_tuesday && 2.days.from_now.to_date != @next_tuesday %>
 
 		<div>
 			<span>Tuesday  <%= @next_tuesday.month %>/<%= @next_tuesday.day %> </span>
@@ -20,7 +20,7 @@
 		</div>
 	<% end %>
 
-	<% if Date.tomorrow != @next_thursday || 2.days.from_now.to_date != @next_thursday %>
+	<% if Date.tomorrow != @next_thursday && 2.days.from_now.to_date != @next_thursday %>
 		<div>
 		<span>Thursday  <%= @next_thursday.month %>/<%= @next_thursday.day %> </span>
 		<input type="checkbox" name="upcoming[1_thursday]" value="<%= @next_thursday %>" />

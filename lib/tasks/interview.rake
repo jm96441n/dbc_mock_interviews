@@ -78,7 +78,7 @@ namespace :interview do
 					UserMailer.interview_email(user_1, user_2, question_1).deliver_now
 					UserMailer.interview_email(user_2, user_1, question_2).deliver_now
 					if users.length > 0 
-						sleep(4.minutes)
+						sleep(10.minutes)
 					end
 				end
 			end

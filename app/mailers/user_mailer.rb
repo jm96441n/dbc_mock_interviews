@@ -14,7 +14,6 @@ class UserMailer < ApplicationMailer
 		@question = question
 		@url = "https://dbc-algorithms.herokuapp.com/#{@user.id}"
 		mail(to: @user.email,subject: 'Your Upcoming Mock Interview')
-		mail(to: 'john@johnmaguiredeveloper.com',subject: 'Your Upcoming Mock Interview')
 	end	
 
 	def interview_3_email(user, partner1, partner2, question)
@@ -43,6 +42,6 @@ class UserMailer < ApplicationMailer
 
 	def confirm(user)
 		@user = user
-		mail(to: @user.email, subject 'Confirming Your Session for Tomorrow')
+		mail(to: @user.email, subject: 'Confirming Your Session for Tomorrow')
 	end
 end

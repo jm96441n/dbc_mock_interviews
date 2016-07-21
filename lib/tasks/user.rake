@@ -13,7 +13,11 @@ namespace :user do
   	i.each do |int|
   		u_i << UserInterview.where(interview_id: int.id)
   	end
-  	p u_i
+  	u_i.each do |ui|
+  		users << User.find(ui[0].user_id)
+  		users << User.find(ui[1].user_id)
+  	end
+  	p users
   end
 
 end
